@@ -1,0 +1,1 @@
+buat kondisi baru dimana jika umurnya itu adalah 50 keatas maka tampilkan "Dianjurkan untuk tidak memasuki kawasan ini"

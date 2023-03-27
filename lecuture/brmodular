@@ -1,0 +1,32 @@
+const str = `coba aja`
+result = []
+temp = ``
+flag = true
+
+function split(str, operator){
+    for (i = 0; i <= str.length;i++){
+        if(str[i] === operator || str[i] === undefined){
+            result.push(temp)
+            flag = false
+            temp = ``
+            continue
+        } else {
+            temp += str[i]
+        }
+    }
+    return result
+}
+
+// console.log(split(str, ' '))
+
+function reverse(arr){
+    let tampungArray = []
+    let tampung = ``
+    let pisah = split(str,` `)
+        for (let j = str.length - 1; j >= 0; j--){
+            tampung += str[j]
+        }
+    tampungArray.push(tampung)
+    return tampungArray
+}
+console.log(reverse(str, ` `))

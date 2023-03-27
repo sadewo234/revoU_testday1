@@ -1,0 +1,1 @@
+console.log(`menuliskan javascript secara external`);

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANAGE USER</title>
+    <link rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div align="center">
+    <div><h2>MANAGE USERS</h2></div>
+    <div "m-4">
+        <a class="h5" th:href="@{/users/new}" >Add New User</a>
+    </div>
+
+    <div th:if="${message}" class=" alert-success text-center">
+        [[@{berhasil!}]]
+    </div>
+<div>
+    [[${listUsers}]]    testing
+</div>
+
+    <div>
+        <table class="border=1">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>E-mail</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Enabled</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <th:block   th:each="user : ${listUsers}">
+                    <tr>
+                        <td>[[${user.id}]]</td>
+                        <td>[[${user.email}]]</td>
+                        <td>[[${user.firstName}]]</td>
+                        <td>[[${user.lastName}]]</td>
+                        <td>[[${user.enabled}]]</td>
+                    </tr>
+                    <td>
+                        <a class="h4 mr-3" th:href="@{'/users/edit' + ${user.id}}">EDIT</a>
+                        <a class="h4" th:href="@{'/users/delete' + ${user.id}}" >DELETE</a>
+                    </td>
+                </th:block>
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+</body>
+</html>

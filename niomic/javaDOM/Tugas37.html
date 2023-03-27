@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIOMIC</title>
+</head>
+<body>
+    <button type="button" onclick="Tombol()" name="button">Jalankan</button>
+    <br />
+    <br />
+    <hr />
+    Atribut <b>getNamedItem()</b> :
+    <p id="contoh">contoh</p>
+    <hr />
+    Atribut <b>name()</b> :
+    <p id="contoh2">contoh</p>
+    <hr />
+    Atribut <b>length()</b> :
+    <p id="contoh3">contoh</p>
+    <hr />
+   <script text="text/javascript">
+    function Tombol (){
+        var a = document.getElementsByTagName(`button`)[0]
+        var b = a.attributes.getNamedItem(`onclick`).value
+        document.getElementById(`contoh`).innerHTML = b
+        var c = document.getElementsByTagName(`button`)[0]
+        var d = c.attributes[0].name
+        document.getElementById(`contoh2`).innerHTML = d
+        var e = document.getElementsByTagName(`button`)[0]
+        var f = c.attributes.length
+        document.getElementById(`contoh3`).innerHTML = f
+
+    }
+   </script>
+</body>
+</html>
